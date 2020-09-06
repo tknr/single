@@ -1,2 +1,3 @@
 #!/bin/bash -ue
-[ "$$" -ne $(pgrep -fo "$0 $*") ] && exit 1 || eval $*;exit $?
+func_message() { echo '[INFO] already process is running [${1}]';exit 1; }
+[ "$$" -ne $(pgrep -fo "$0 $*") ] && func_message "$*" || eval $*;exit $?
