@@ -1,0 +1,2 @@
+#!/bin/bash -ue
+[ "$$" -ne $(pgrep -fo "$0 $*") ] && exit 1 || eval $*;exit $?
